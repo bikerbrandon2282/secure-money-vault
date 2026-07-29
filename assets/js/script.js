@@ -46,5 +46,11 @@ function getCurrentPayPeriod() {
 }
 
 const period = getCurrentPayPeriod();
-  document.getElementById("pay-period").innerText =
-    `Current Pay Period: ${period.start.toDateString()} → ${period.end.toDateString()}`;
+document.getElementById("pay-period").innerText =`Current Pay Period: ${period.start.toDateString()} → ${period.end.toDateString()}`;
+
+let tempButton = document.getElementById("calculate-btn");
+tempButton.addEventListener("click", function() {
+  let tempCalc = document.getElementById("temp-input");
+  let spending = tempCalc.value - 376.10;
+  tempCalc.value = `${spending.toFixed(2)}`;
+});
